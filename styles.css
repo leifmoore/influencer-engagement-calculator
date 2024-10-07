@@ -1,112 +1,125 @@
-/* Use the imported SF Pro Display font */
-@import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;600&display=swap');
-
-/* Basic Reset */
-* {
+/* Define primary color variable */
+:root {
+    --primary-color: #007bff;
+  }
+  
+  /* General Styles */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f9fafb;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body Styling */
-body {
-    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: #F5F5F7;
-    color: #1D1D1F;
-}
-
-/* Container Styling */
-.container {
-    max-width: 400px;
-    margin: 80px auto;
-    padding: 40px;
-    background-color: #FFFFFF;
-    border-radius: 12px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-}
-
-/* Heading */
-h1 {
-    font-size: 28px;
-    font-weight: 600;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-/* Form Group */
-.form-group {
-    margin-bottom: 20px;
-}
-
-/* Labels */
-label {
-    display: block;
-    font-size: 16px;
-    margin-bottom: 8px;
-}
-
-/* Inputs and Select */
-input[type="number"], select {
+  }
+  
+  /* Card Styles */
+  .card {
     width: 100%;
-    padding: 12px;
-    font-size: 16px;
-    border: 1px solid #CED0D4;
-    border-radius: 8px;
-    background-color: #F2F2F7;
-    color: #1D1D1F;
+    max-width: 28rem; /* Equivalent to max-w-md */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    background-color: #f9fafb; /* bg-gray-50 */
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-header {
+    padding: 1rem;
+    background-color: #fff;
+  }
+  
+  .card-title {
+    font-size: 1.5rem; /* text-2xl */
+    font-weight: bold; /* font-bold */
+    text-align: center; /* text-center */
+    color: var(--primary-color); /* text-primary */
+    margin: 0;
+  }
+  
+  .card-content {
+    padding: 1rem;
+  }
+  
+  .card-content > .form-group:not(:last-child) {
+    margin-bottom: 1rem; /* space-y-4 */
+  }
+  
+  /* Form Group Styles */
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group label {
+    margin-bottom: 0.5rem; /* space-y-2 */
+    font-weight: 500;
+  }
+  
+  .form-group input,
+  .form-group select {
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 0.375rem; /* rounded-md */
+    background-color: #fff;
+    transition: border-color 0.15s ease-in-out;
+  }
+  
+  .form-group input:focus,
+  .form-group select:focus {
+    border-color: var(--primary-color);
     outline: none;
-    transition: border-color 0.2s ease;
-}
-
-input[type="number"]:focus, select:focus {
-    border-color: #0071E3;
-}
-
-/* Button */
-button {
-    width: 100%;
-    padding: 14px;
-    font-size: 17px;
-    font-weight: 600;
-    color: #FFFFFF;
-    background-color: #0071E3;
+  }
+  
+  /* Button Styles */
+  button {
+    width: 100%; /* w-full */
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: var(--primary-color);
     border: none;
-    border-radius: 8px;
+    border-radius: 0.375rem; /* rounded-md */
     cursor: pointer;
-    margin-top: 10px;
-    transition: background-color 0.2s ease;
-}
-
-button:hover {
-    background-color: #005BB5;
-}
-
-button:active {
-    background-color: #004C99;
-}
-
-/* Result Display */
-.result {
-    margin-top: 30px;
-    font-size: 22px;
-    font-weight: 600;
+    transition: background-color 0.15s ease-in-out;
+    margin-top: 1rem;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  button:active {
+    background-color: #004085;
+  }
+  
+  /* Result Styles */
+  .result {
+    margin-top: 1rem; /* mt-4 */
+    padding: 1rem; /* p-4 */
+    background-color: rgba(0, 123, 255, 0.1); /* bg-primary/10 */
+    border-radius: 0.375rem; /* rounded-md */
+  }
+  
+  .result p {
+    margin: 0;
+    text-align: center; /* text-center */
+    font-size: 1.125rem; /* text-lg */
+    font-weight: 600; /* font-semibold */
+  }
+  
+  .result .highlight {
+    color: var(--primary-color); /* text-primary */
+  }
+  
+  /* Utility Classes */
+  .mt-4 {
+    margin-top: 1rem;
+  }
+  
+  .text-center {
     text-align: center;
-    color: #1D1D1F;
-}
-
-/* Placeholder Color */
-input::placeholder {
-    color: #8E8E93;
-}
-
-/* Responsive Design */
-@media (max-width: 480px) {
-    .container {
-        margin: 40px 20px;
-        padding: 30px;
-    }
-
-    h1 {
-        font-size: 24px;
-    }
-}
+  }
+  
