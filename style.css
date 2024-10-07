@@ -2,7 +2,76 @@
 :root {
     --primary-color: #007bff;
   }
-  
+  /* Define primary color variable */
+:root {
+  --primary-color: #007bff;
+  --btn-border: none;
+  --btn-bg: var(--primary-color);
+  --btn-shadow: 0 4px 6px rgba(0, 123, 255, 0.3);
+  --btn-text-color: #fff;
+
+  --shine-degree: 45deg;
+  --shine-color: rgba(255, 255, 255, 0.3);
+  --shine-effect: linear-gradient(
+    var(--shine-degree),
+    transparent 0%,
+    var(--shine-color) 50%,
+    transparent 100%
+  );
+  --shine-transition: all 0.65s ease-in-out;
+}
+
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9fafb;
+  margin: 0;
+  padding: 0;
+}
+
+/* Card Styles */
+/* ... (existing card styles remain the same) ... */
+
+/* Form Group Styles */
+/* ... (existing form group styles remain the same) ... */
+
+/* Button Styles */
+button {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--btn-text-color);
+  background-color: var(--btn-bg);
+  border: var(--btn-border);
+  border-radius: 0.375rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--shine-effect);
+  transition: var(--shine-transition);
+}
+
+button:hover {
+  box-shadow: var(--btn-shadow);
+}
+
+button:hover::before {
+  left: 100%;
+}
+
+/* Result Styles */
+/* ... (existing result styles remain the same) ... */
+
   /* General Styles */
   body {
     font-family: Arial, sans-serif;
