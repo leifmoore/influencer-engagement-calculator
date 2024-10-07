@@ -44,3 +44,4 @@ function calculateEngagement() {
 
 // Add event listener to the calculate button
 document.getElementById('calculateBtn').addEventListener('click', calculateEngagement);
+``
