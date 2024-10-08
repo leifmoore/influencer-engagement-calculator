@@ -1,10 +1,7 @@
-/* Define primary color variable */
-:root {
-    --primary-color: #007bff;
-  }
+
   /* Define primary color variable */
 :root {
-  --primary-color: #333;
+  --primary-color: #333333;
   --btn-border: none;
   --btn-bg: var(--primary-color);
   --btn-shadow: 0 4px 6px rgba(0, 123, 255, 0.3);
@@ -28,7 +25,7 @@
 /* General Styles */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f9fafb;
+  background-color: #222222;
   margin: 0;
   padding: 0;
   display: flex;
@@ -189,7 +186,6 @@ button::before {
   
   .card {
     width: 100%; /* Slightly wider on very small screens */
-    zoom: 1.2;
   }
 
   .card-title {

@@ -25,7 +25,7 @@ function calculateEngagement() {
     var w_CR = 2;
     var w_LR = 1;
     var w_VR = .5;
-    var totalWeight = w_CR + w_LR + w_VR;
+    var totalWeight = w_CR + w_LR + w_VR;``
   
     // Calculate Engagement Score (E)
     var E = ((CR * w_CR) + (LR * w_LR) + (VR * w_VR)) / totalWeight;
