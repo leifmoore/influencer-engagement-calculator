@@ -24,7 +24,7 @@ function calculateEngagement() {
     // Apply weights (Comments are twice as important)
     var w_CR = 2;
     var w_LR = 1;
-    var w_VR = 1;
+    var w_VR = .5;
     var totalWeight = w_CR + w_LR + w_VR;
   
     // Calculate Engagement Score (E)

@@ -4,7 +4,7 @@
   }
   /* Define primary color variable */
 :root {
-  --primary-color: #007bff;
+  --primary-color: #333;
   --btn-border: none;
   --btn-bg: var(--primary-color);
   --btn-shadow: 0 4px 6px rgba(0, 123, 255, 0.3);
@@ -19,6 +19,10 @@
     transparent 100%
   );
   --shine-transition: all 0.65s ease-in-out;
+
+  /* New variables for animation */
+  --anim-duration: 4s; /* Animation duration */
+  --anim-speed: 0.65s; /* Animation speed */
 }
 
 /* General Styles */
@@ -27,61 +31,16 @@ body {
   background-color: #f9fafb;
   margin: 0;
   padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
-/* Card Styles */
-/* ... (existing card styles remain the same) ... */
-
-/* Form Group Styles */
-/* ... (existing form group styles remain the same) ... */
-
-/* Button Styles */
-button {
-  width: 100%;
-  padding: 0.75rem;
-  font-size: 1rem;
-  font-weight: bold;
-  color: var(--btn-text-color);
-  background-color: var(--btn-bg);
-  border: var(--btn-border);
-  border-radius: 0.375rem;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-}
-
-button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: var(--shine-effect);
-  transition: var(--shine-transition);
-}
-
-button:hover {
-  box-shadow: var(--btn-shadow);
-}
-
-button:hover::before {
-  left: 100%;
-}
-
-/* Result Styles */
-/* ... (existing result styles remain the same) ... */
-
-  /* General Styles */
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f9fafb;
-    margin: 0;
-    padding: 0;
-  }
-  
   /* Card Styles */
   .card {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     max-width: 28rem; /* Equivalent to max-w-md */
     margin-left: auto;
@@ -141,28 +100,61 @@ button:hover::before {
     outline: none;
   }
   
-  /* Button Styles */
-  button {
-    width: 100%; /* w-full */
-    padding: 0.75rem;
-    font-size: 1rem;
-    font-weight: bold;
-    color: #fff;
-    background-color: #333;
-    border: none;
-    border-radius: 0.375rem; /* rounded-md */
-    cursor: pointer;
-    transition: background-color 0.15s ease-in-out;
-    margin-top: 1rem;
+/* Button Styles */
+button {
+  /* Existing styles */
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--btn-text-color);
+  background-color: var(--btn-bg);
+  border: var(--btn-border);
+  border-radius: 0.375rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Remove hover effect since the shine will animate continuously */
+button:hover {
+  box-shadow: none;
+}
+
+/* Remove hover effect on ::before */
+button:hover::before {
+  left: -100%;
+}
+
+/* Shine Effect */
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--shine-effect);
+  /* Apply animation if .btn-anim class is present */
+  transition: var(--shine-transition);
+}
+
+.btn-anim::before {
+  animation: shine var(--anim-duration) ease-in-out infinite;
+}
+
+/* Keyframes for the shine animation */
+@keyframes shine {
+  0% {
+    left: -100%;
+    transition-property: left;
   }
-  
-  button:hover {
-    background-color: #333;
+  11.5%,
+  100% {
+    left: 100%;
+    transition-property: left;
   }
-  
-  button:active {
-    background-color: #333333;
-  }
+}
   
   /* Result Styles */
   .result {
@@ -191,4 +183,36 @@ button:hover::before {
   .text-center {
     text-align: center;
   }
+
+  /* Media Queries for Mobile Devices */
+@media (max-width: 500px) {
+  
+  .card {
+    width: 100%; /* Slightly wider on very small screens */
+    zoom: 1.2;
+  }
+
+  .card-title {
+    font-size: 1.25rem; /* Slightly smaller title */
+  }
+
+  .form-group label {
+    font-size: 0.95rem;
+  }
+
+  .form-group input,
+  .form-group select {
+    font-size: 1rem;
+    padding: 0.65rem 0.85rem; /* Adjusted padding */
+  }
+
+  .btn {
+    font-size: 1rem; /* Slightly smaller button text */
+    padding: 0.65rem;
+  }
+
+  .result p {
+    font-size: 1rem;
+  }
+}
   
