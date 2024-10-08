@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <title>Influencer Engagement Calculator</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Add viewport meta tag for mobile responsiveness -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
   <div class="card">
@@ -11,6 +13,23 @@
       <h1 class="card-title">Influencer Engagement Calculator</h1>
     </div>
     <div class="card-content">
+      <!-- Influencer Band Switch -->
+      <div class="form-group">
+        <label>Influencer Band:</label>
+        <div class="influencer-band-switch">
+          <input type="radio" id="band-nano" name="influencerBand" value="nano" checked>
+          <label for="band-nano">Nano</label>
+          <input type="radio" id="band-micro" name="influencerBand" value="micro">
+          <label for="band-micro">Micro</label>
+          <input type="radio" id="band-macro" name="influencerBand" value="macro">
+          <label for="band-macro">Macro</label>
+          <input type="radio" id="band-mega" name="influencerBand" value="mega">
+          <label for="band-mega">Mega</label>
+          <!-- Selector -->
+          <div class="switch-selector"></div>
+        </div>
+      </div>
+      <!-- Existing Form Groups -->
       <div class="form-group">
         <label for="followers">Number of Followers (F):</label>
         <input type="number" id="followers" placeholder="e.g., 10,000">
